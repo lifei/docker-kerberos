@@ -72,4 +72,4 @@ $ADMIN_PW
 
 EOF
 
-killall5 sleep
+ps -ef | grep sleep | grep 86400 | awk '{print $2}' | xargs kill
