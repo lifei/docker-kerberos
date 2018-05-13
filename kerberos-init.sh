@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -ex
+
 ldap_kerberos_container_dn=cn=kerberos,$DOMAIN_DN
 ldap_kdc_dn=$ADMIN_DN
 ldap_kadmind_dn=$ADMIN_DN
@@ -72,4 +74,4 @@ $ADMIN_PW
 
 EOF
 
-ps -ef | grep sleep | grep 86400 | awk '{print $2}' | xargs kill
+mv /etc/krb5.conf /etc/krb5kdc
